@@ -26,17 +26,17 @@
       --morado-oscuro: #2D0A5F;
       --gris-claro: #F5F5F5;
     }
- 
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
- 
+
     body {
       font-family: 'Nunito', sans-serif;
       background: #fff;
       color: #1a1a2e;
       overflow-x: hidden;
     }
- 
+
     /* NAV */
     nav {
       position: fixed;
@@ -50,16 +50,16 @@
       padding: 12px 40px;
       box-shadow: 0 2px 20px rgba(75,29,142,0.1);
     }
- 
+
     .nav-logo {
       font-family: 'Fredoka One', cursive;
       font-size: 1.4rem;
       color: var(--morado);
       text-decoration: none;
     }
- 
+
     .nav-links { display: flex; gap: 28px; list-style: none; }
- 
+
     .nav-links a {
       text-decoration: none;
       font-weight: 700;
@@ -70,7 +70,7 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--cian); }
- 
+
     /* HERO */
     #inicio {
       min-height: 100vh;
@@ -84,7 +84,7 @@
       position: relative;
       overflow: hidden;
     }
- 
+
     #inicio::before {
       content: '';
       position: absolute;
@@ -92,7 +92,7 @@
       background: radial-gradient(ellipse at 20% 50%, rgba(75,29,142,0.15) 0%, transparent 60%),
                   radial-gradient(ellipse at 80% 20%, rgba(255,214,0,0.2) 0%, transparent 50%);
     }
- 
+
     .hero-badge {
       display: inline-block;
       background: var(--verde);
@@ -106,7 +106,7 @@
       margin-bottom: 28px;
       position: relative;
     }
- 
+
     .hero-title {
       font-family: 'Fredoka One', cursive;
       font-size: clamp(3rem, 10vw, 6rem);
@@ -116,7 +116,7 @@
       line-height: 1.1;
       text-shadow: 4px 4px 0 rgba(255,255,255,0.3);
     }
- 
+
     .hero-tagline {
       font-family: 'Fredoka One', cursive;
       font-size: clamp(1.4rem, 3.5vw, 2.4rem);
@@ -126,7 +126,7 @@
       margin-bottom: 16px;
       position: relative;
     }
- 
+
     .hero-sub {
       font-size: 1.05rem;
       color: var(--morado-oscuro);
@@ -134,7 +134,7 @@
       margin-bottom: 40px;
       position: relative;
     }
- 
+
     .hero-hashtag {
       display: inline-block;
       background: var(--morado);
@@ -145,7 +145,7 @@
       border-radius: 100px;
       position: relative;
     }
- 
+
     .bubble {
       position: absolute;
       border-radius: 50%;
@@ -156,26 +156,26 @@
     .bubble:nth-child(2) { width:120px; height:120px; background:var(--rojo); bottom:15%; right:-2%; animation-delay:1s; }
     .bubble:nth-child(3) { width:80px; height:80px; background:var(--verde); top:60%; left:8%; animation-delay:2s; }
     .bubble:nth-child(4) { width:60px; height:60px; background:var(--morado); top:20%; right:10%; animation-delay:0.5s; }
- 
+
     @keyframes drift {
       0%,100% { transform:translate(0,0) rotate(0deg); }
       33% { transform:translate(10px,-15px) rotate(5deg); }
       66% { transform:translate(-8px,10px) rotate(-3deg); }
     }
- 
+
     /* SECTIONS */
     section { padding: 80px 24px; }
     .section-inner { max-width: 900px; margin: 0 auto; }
- 
+
     .section-label {
       font-family: 'Fredoka One', cursive;
       font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.1;
       margin-bottom: 20px;
     }
- 
+
     .section-body { font-size: 1.05rem; line-height: 1.8; color: #333; }
- 
+
     .highlight-box {
       display: inline;
       background: var(--amarillo);
@@ -184,13 +184,13 @@
       border-radius: 4px;
       font-weight: 800;
     }
- 
+
     /* QUÉ ES */
     #que-es { background: var(--cian); }
     #que-es .section-label { color: var(--morado-oscuro); }
- 
+
     .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
- 
+
     .info-card {
       background: rgba(255,255,255,0.9);
       border-radius: 20px;
@@ -206,12 +206,12 @@
     .info-card.yellow h3 { color:var(--naranja); }
     .info-card.red h3 { color:var(--rojo); }
     .info-card p { font-size:0.92rem; color:#444; line-height:1.7; }
- 
+
     /* DONDE NACE */
     #donde-nace { background: var(--verde); }
     #donde-nace .section-label { color: #fff; }
     #donde-nace .section-body { color: rgba(255,255,255,0.9); }
- 
+
     .llac-badge {
       display: inline-block;
       background: var(--naranja);
@@ -223,7 +223,7 @@
       margin: 20px 0;
       box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     }
- 
+
     .desde-quote {
       background: rgba(255,255,255,0.15);
       border-left: 5px solid #fff;
@@ -234,12 +234,12 @@
       font-size: 1.4rem;
       color: #fff;
     }
- 
+
     /* MISIÓN */
     #mision { background: var(--amarillo); }
     #mision .section-label { color: var(--morado-oscuro); }
     #mision .section-body { color: var(--morado-oscuro); }
- 
+
     .mission-highlight {
       background: var(--cian);
       border-radius: 20px;
@@ -250,12 +250,12 @@
       color: var(--morado-oscuro);
       line-height: 1.4;
     }
- 
+
     /* VISIÓN */
     #vision { background: var(--naranja); }
     #vision .section-label { color: #fff; }
     #vision .section-body { color: rgba(255,255,255,0.95); }
- 
+
     .vision-box {
       background: var(--verde);
       border-radius: 20px;
@@ -266,15 +266,15 @@
       font-size: 1rem;
       line-height: 1.7;
     }
- 
+
     .vision-dream { margin-top:20px; font-style:italic; font-weight:600; color:rgba(255,255,255,0.9); font-size:0.95rem; }
- 
+
     /* QUÉ HACEMOS */
     #que-hacemos { background: var(--rojo); }
     #que-hacemos .section-label { color: #fff; }
- 
+
     .hacemos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:36px; }
- 
+
     .hacemos-card {
       background: #fff;
       border-radius: 20px;
@@ -287,14 +287,14 @@
     .hacemos-icon { font-size:2.5rem; margin-bottom:14px; }
     .hacemos-card h3 { font-family:'Fredoka One',cursive; font-size:1rem; color:var(--rojo); margin-bottom:10px; line-height:1.3; }
     .hacemos-card p { font-size:0.88rem; color:#555; line-height:1.6; }
- 
+
     /* CÓMO */
     #como { background: var(--morado); }
     #como .section-label { color: var(--amarillo); }
     #como .section-body { color: rgba(255,255,255,0.9); }
- 
+
     .como-steps { display:flex; flex-direction:column; gap:16px; margin-top:32px; }
- 
+
     .como-step {
       display: flex;
       align-items: center;
@@ -306,7 +306,7 @@
     }
     .como-step-num { font-family:'Fredoka One',cursive; font-size:2rem; color:var(--amarillo); min-width:48px; }
     .como-step-text { font-weight:700; color:#fff; font-size:1rem; line-height:1.4; }
- 
+
     /* PILOTO */
     #piloto {
       background: linear-gradient(135deg, var(--morado-oscuro) 0%, #1a0533 100%);
@@ -324,7 +324,7 @@
     }
     #piloto .section-label { color: var(--amarillo); }
     #piloto .section-body { color: rgba(255,255,255,0.85); }
- 
+
     .piloto-card {
       background: rgba(255,255,255,0.07);
       border: 2px solid rgba(255,255,255,0.15);
@@ -335,7 +335,7 @@
       align-items: center;
       gap: 32px;
     }
- 
+
     .piloto-icon-wrap {
       background: var(--cian);
       border-radius: 20px;
@@ -346,10 +346,10 @@
       font-size: 2.8rem;
       flex-shrink: 0;
     }
- 
+
     .piloto-info h3 { font-family:'Fredoka One',cursive; font-size:1.5rem; color:#fff; margin-bottom:8px; }
     .piloto-info p { color:rgba(255,255,255,0.75); font-size:0.95rem; line-height:1.6; }
- 
+
     .piloto-date {
       display: inline-block;
       margin-top: 12px;
@@ -362,13 +362,13 @@
       border-radius: 100px;
       text-transform: uppercase;
     }
- 
+
     /* PATROCINADORES */
     #patrocinadores { background: var(--gris-claro); }
     #patrocinadores .section-label { color: var(--morado); }
- 
+
     .patrocinadores-grid { display:flex; flex-wrap:wrap; gap:20px; margin-top:36px; justify-content:center; }
- 
+
     .sponsor-placeholder {
       width: 160px; height: 100px;
       background: #fff;
@@ -385,7 +385,7 @@
       text-align: center;
       padding: 10px;
     }
- 
+
     .sponsor-card {
       display: flex;
       flex-direction: column;
@@ -413,17 +413,17 @@
       text-align: center;
       line-height: 1.3;
     }
- 
+
     .patrocinadores-cta { text-align:center; margin-top:32px; font-size:0.9rem; color:#888; }
     .patrocinadores-cta a { color:var(--morado); font-weight:800; text-decoration:none; }
- 
+
     /* CONTACTO */
     #contacto { background: var(--morado-oscuro); text-align: center; }
     #contacto .section-label { color: var(--amarillo); }
     #contacto .section-body { color: rgba(255,255,255,0.75); margin-bottom: 40px; }
- 
+
     .contact-links { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; }
- 
+
     .contact-btn {
       display: inline-flex;
       align-items: center;
@@ -439,15 +439,15 @@
     .contact-btn:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.3); }
     .btn-ig { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; }
     .btn-mail { background:var(--cian); color:var(--morado-oscuro); }
- 
+
     /* FOOTER */
     footer { background:#0a0a0a; color:rgba(255,255,255,0.4); text-align:center; padding:28px 24px; font-size:0.82rem; }
     footer span { color:var(--cian); font-weight:700; }
- 
+
     /* REVEAL */
     .reveal { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
- 
+
     /* RESPONSIVE */
     @media (max-width: 700px) {
       nav { padding:12px 20px; }
@@ -460,7 +460,7 @@
   </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <a href="#inicio" class="nav-logo">métele mente 🧠</a>
@@ -473,7 +473,7 @@
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
- 
+
 <!-- HERO -->
 <section id="inicio">
   <div class="bubble"></div>
@@ -486,7 +486,7 @@
   <p class="hero-sub">Un proyecto social y educativo panameño</p>
   <div class="hero-hashtag">#MételeMentePA</div>
 </section>
- 
+
 <!-- QUÉ ES -->
 <section id="que-es">
   <div class="section-inner">
@@ -519,7 +519,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- DONDE NACE -->
 <section id="donde-nace">
   <div class="section-inner">
@@ -532,7 +532,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- MISIÓN -->
 <section id="mision">
   <div class="section-inner">
@@ -545,7 +545,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- VISIÓN -->
 <section id="vision">
   <div class="section-inner">
@@ -561,7 +561,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- QUÉ HACEMOS -->
 <section id="que-hacemos">
   <div class="section-inner">
@@ -588,7 +588,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- CÓMO -->
 <section id="como">
   <div class="section-inner">
@@ -616,7 +616,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- PILOTO -->
 <section id="piloto">
   <div class="section-inner">
@@ -638,7 +638,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- PATROCINADORES -->
 <section id="patrocinadores">
   <div class="section-inner">
@@ -661,7 +661,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="section-inner">
@@ -681,12 +681,12 @@
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
   <p>© 2026 <span>Métele Mente PA</span> · Desarrollado en el marco del LLAC 1.0 2026 · <span>#MételeMentePA</span></p>
 </footer>
- 
+
 <script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -694,6 +694,6 @@
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
 </script>
- 
+
 </body>
 </html>
