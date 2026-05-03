@@ -74,9 +74,7 @@
     /* HERO */
     #inicio {
       min-height: 100vh;
-      background:
-        linear-gradient(160deg, rgba(45,10,95,0.78) 0%, rgba(0,188,212,0.65) 100%),
-        url('img/foto_12.png') center center / cover no-repeat;
+      background: var(--cian);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -91,7 +89,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 100%, rgba(0,188,212,0.2) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 20% 50%, rgba(75,29,142,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,214,0,0.2) 0%, transparent 50%);
     }
  
     .hero-badge {
@@ -111,27 +110,26 @@
     .hero-title {
       font-family: 'Fredoka One', cursive;
       font-size: clamp(3rem, 10vw, 6rem);
-      color: #fff;
+      color: var(--morado-oscuro);
       margin-bottom: 32px;
       position: relative;
       line-height: 1.1;
-      text-shadow: 3px 3px 0 rgba(45,10,95,0.4), 0 0 40px rgba(0,188,212,0.3);
+      text-shadow: 4px 4px 0 rgba(255,255,255,0.3);
     }
  
     .hero-tagline {
       font-family: 'Fredoka One', cursive;
       font-size: clamp(1.4rem, 3.5vw, 2.4rem);
-      color: rgba(255,255,255,0.95);
+      color: var(--morado-oscuro);
       line-height: 1.2;
       max-width: 600px;
       margin-bottom: 16px;
       position: relative;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
  
     .hero-sub {
       font-size: 1.05rem;
-      color: rgba(255,255,255,0.85);
+      color: var(--morado-oscuro);
       font-weight: 600;
       margin-bottom: 40px;
       position: relative;
@@ -210,11 +208,7 @@
     .info-card p { font-size:0.92rem; color:#444; line-height:1.7; }
  
     /* DONDE NACE */
-    #donde-nace {
-      background:
-        linear-gradient(rgba(0,166,81,0.82), rgba(0,100,50,0.88)),
-        url('img/foto_13.png') center 30% / cover no-repeat;
-    }
+    #donde-nace { background: var(--verde); }
     #donde-nace .section-label { color: #fff; }
     #donde-nace .section-body { color: rgba(255,255,255,0.9); }
  
@@ -315,9 +309,7 @@
  
     /* PILOTO */
     #piloto {
-      background:
-        linear-gradient(135deg, rgba(45,10,95,0.88) 0%, rgba(26,5,51,0.92) 100%),
-        url('img/foto_07.png') center 20% / cover no-repeat;
+      background: linear-gradient(135deg, var(--morado-oscuro) 0%, #1a0533 100%);
       position: relative;
       overflow: hidden;
     }
@@ -369,6 +361,97 @@
       padding: 4px 14px;
       border-radius: 100px;
       text-transform: uppercase;
+    }
+ 
+    /* ─── CARRUSEL ─── */
+    .carrusel-wrap {
+      width: 100%;
+      overflow: hidden;
+      padding: 20px 0 8px;
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+ 
+    .carrusel-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: scroll-left 28s linear infinite;
+    }
+    .carrusel-track:hover { animation-play-state: paused; }
+ 
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+ 
+    .carrusel-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 22px 18px;
+      box-shadow: 0 4px 20px rgba(75,29,142,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      width: 170px;
+      flex-shrink: 0;
+    }
+    .carrusel-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(75,29,142,0.18);
+    }
+ 
+    .carrusel-media {
+      width: 100px; height: 70px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .carrusel-media img {
+      max-width: 100%; max-height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+ 
+    /* Avatar circular para personas */
+    .carrusel-avatar {
+      width: 80px !important; height: 80px !important;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--cian);
+      flex-shrink: 0;
+    }
+    .carrusel-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      mix-blend-mode: normal;
+    }
+ 
+    /* Iniciales */
+    .carrusel-initials {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.5rem;
+      color: #fff;
+      border: none !important;
+    }
+ 
+    .carrusel-name {
+      font-family: 'Fredoka One', cursive;
+      font-size: 0.82rem;
+      color: var(--morado);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .carrusel-role {
+      font-size: 0.7rem;
+      color: #888;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
     }
  
     /* ─── PATROCINADORES ─── */
@@ -585,6 +668,44 @@
       text-transform: uppercase;
     }
  
+    /* CARRUSEL DE FOTOS */
+    .foto-carrusel-wrap {
+      width: 100%;
+      overflow: hidden;
+      padding: 20px 0;
+      mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    }
+    .foto-carrusel-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: scroll-left 40s linear infinite;
+    }
+    .foto-carrusel-track:hover { animation-play-state: paused; }
+    .foto-carrusel-card {
+      position: relative;
+      width: 260px;
+      height: 200px;
+      border-radius: 18px;
+      overflow: hidden;
+      flex-shrink: 0;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
+    }
+    .foto-carrusel-card:hover { transform: scale(1.04); }
+    .foto-carrusel-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .foto-carrusel-card .galeria-caption {
+      opacity: 0;
+      font-size: 0.8rem;
+    }
+    .foto-carrusel-card:hover .galeria-caption { opacity: 1; }
+ 
     /* GALERÍA */
     #galeria { background: var(--morado-oscuro); }
     #galeria .section-label { color: var(--amarillo); }
@@ -676,7 +797,7 @@
  
 <!-- NAV -->
 <nav>
-  <a href="#inicio" class="nav-logo">métele mente 🧠</a>
+  <a href="#inicio" class="nav-logo">MeteleMente 🧠</a>
   <ul class="nav-links">
     <li><a href="#que-es">¿Qué es?</a></li>
     <li><a href="#mision">Misión</a></li>
@@ -698,7 +819,7 @@
   <div class="hero-title">métele<br>mente</div>
   <p class="hero-tagline">Aquí no se deja a nadie atrás,<br>¡pa' lante juntos!</p>
   <p class="hero-sub">Un proyecto social y educativo panameño</p>
-  <div class="hero-hashtag">#MételeMentePA</div>
+  <div class="hero-hashtag">#MeteleMentePA</div>
 </section>
  
 <!-- QUÉ ES -->
@@ -739,10 +860,48 @@
   <div class="section-inner">
     <div class="reveal">
       <p class="section-label">¿Dónde nace?</p>
-      <p class="section-body">Esto nace desde jóvenes, para Panamá. Métele Mente surge en el:</p>
+      <p class="section-body">Esto nace desde jóvenes, para Panamá. MeteleMente surge en el:</p>
       <div class="llac-badge">Laboratorio Latinoamericano de Acción Ciudadana 1.0 – 2026</div>
       <p class="section-body">como una iniciativa impulsada por jóvenes comprometidos con una educación más humana e inclusiva.</p>
       <div class="desde-quote">Desde lo nuestro, para los nuestros 🇵🇦</div>
+    </div>
+  </div>
+  <!-- CARRUSEL LLAC -->
+  <div class="foto-carrusel-wrap reveal">
+    <div class="foto-carrusel-track">
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_12.png')">
+        <img src="img/foto_12.png" alt="Equipo LLAC" loading="lazy" />
+        <div class="galeria-caption">😄 La energía del equipo durante el LLAC</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_11.png')">
+        <img src="img/foto_11.png" alt="Jóvenes en el LLAC" loading="lazy" />
+        <div class="galeria-caption">📝 Jóvenes construyendo ideas</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_13.png')">
+        <img src="img/foto_13.png" alt="Grupo LLAC" loading="lazy" />
+        <div class="galeria-caption">🤝 El equipo que hizo posible MeteleMente</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_14.png')">
+        <img src="img/foto_14.png" alt="Cierre LLAC" loading="lazy" />
+        <div class="galeria-caption">🇵🇦 Cierre del LLAC — desde aquí arrancó todo</div>
+      </div>
+      <!-- duplicado para loop -->
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_12.png')">
+        <img src="img/foto_12.png" alt="Equipo LLAC" loading="lazy" />
+        <div class="galeria-caption">😄 La energía del equipo durante el LLAC</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_11.png')">
+        <img src="img/foto_11.png" alt="Jóvenes en el LLAC" loading="lazy" />
+        <div class="galeria-caption">📝 Jóvenes construyendo ideas</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_13.png')">
+        <img src="img/foto_13.png" alt="Grupo LLAC" loading="lazy" />
+        <div class="galeria-caption">🤝 El equipo que hizo posible MeteleMente</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_14.png')">
+        <img src="img/foto_14.png" alt="Cierre LLAC" loading="lazy" />
+        <div class="galeria-caption">🇵🇦 Cierre del LLAC — desde aquí arrancó todo</div>
+      </div>
     </div>
   </div>
 </section>
@@ -853,102 +1012,97 @@
   </div>
 </section>
  
-<!-- DIVISOR CINEMATOGRÁFICO -->
-<div class="foto-divider">
-  <img src="img/foto_08.png" alt="Familias y docentes en la jornada de sensibilización" />
-  <div class="foto-divider-overlay">
-    <p class="foto-divider-quote">"Cuando Panamá comprende, Panamá incluye."</p>
-    <p class="foto-divider-sub">Jornada de sensibilización con familias · C.E.B.G. La Esperanza</p>
-  </div>
-</div>
- 
 <!-- GALERÍA -->
 <section id="galeria">
   <div class="section-inner">
     <div class="reveal">
       <p class="section-label">📸 Así lo vivimos</p>
       <p class="section-body">Momentos reales del piloto en C.E.B.G. La Esperanza, Chiriquí · Abril 2026</p>
+    </div>
+  </div>
  
-      <div class="galeria-grid">
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_07.png')">
-          <img src="img/foto_07.png" alt="Foto grupal de cierre con estudiantes" loading="lazy" />
-          <div class="galeria-caption">🎉 Foto de cierre — entrega de materiales al grupo piloto</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_05.png')">
-          <img src="img/foto_05.png" alt="Dinámica grupal en el aula" loading="lazy" />
-          <div class="galeria-caption">🏫 Dinámica grupal en el aula de La Esperanza</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_08.png')">
-          <img src="img/foto_08.png" alt="Jornada con familias y docentes" loading="lazy" />
-          <div class="galeria-caption">👨‍👩‍👧 Jornada de sensibilización con familias y docentes</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_01.png')">
-          <img src="img/foto_01.png" alt="Lista de asistencia Métele Mente" loading="lazy" />
-          <div class="galeria-caption">✍️ Lista de asistencia — ¡todos presentes!</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_09.png')">
-          <img src="img/foto_09.png" alt="Actividad de diálogo con estudiantes" loading="lazy" />
-          <div class="galeria-caption">💬 Actividad de diálogo y reflexión grupal</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_10.png')">
-          <img src="img/foto_10.png" alt="Actividades lúdicas con materiales" loading="lazy" />
-          <div class="galeria-caption">🎲 Actividades lúdicas con materiales didácticos</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_06.png')">
-          <img src="img/foto_06.png" alt="Voluntario acompañando a estudiante" loading="lazy" />
-          <div class="galeria-caption">🤝 Acompañamiento uno a uno con cada estudiante</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_02.png')">
-          <img src="img/foto_02.png" alt="Acompañamiento personalizado" loading="lazy" />
-          <div class="galeria-caption">📝 Apoyo personalizado durante las actividades</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_03.png')">
-          <img src="img/foto_03.png" alt="Lectura compartida" loading="lazy" />
-          <div class="galeria-caption">📚 Lectura compartida con los más pequeños</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_04.png')">
-          <img src="img/foto_04.png" alt="Equipo trabajando con estudiantes" loading="lazy" />
-          <div class="galeria-caption">⭐ El equipo en acción junto a los estudiantes</div>
-        </div>
- 
+  <div class="foto-carrusel-wrap reveal">
+    <div class="foto-carrusel-track">
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_07.png')">
+        <img src="img/foto_07.png" alt="Foto grupal de cierre" loading="lazy" />
+        <div class="galeria-caption">🎉 Foto de cierre — entrega de materiales al grupo piloto</div>
       </div>
- 
-      <!-- SUBSECCIÓN LLAC -->
-      <p class="aliados-subtitle" style="color:var(--amarillo); border-color:var(--amarillo); margin-top:48px;">🌎 El equipo en el LLAC 1.0 · 2026</p>
-      <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; margin-bottom:4px;">Donde todo nació — Laboratorio Latinoamericano de Acción Ciudadana</p>
- 
-      <div class="galeria-grid">
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_12.png')">
-          <img src="img/foto_12.png" alt="Equipo LLAC celebrando" loading="lazy" />
-          <div class="galeria-caption">😄 La energía del equipo durante el LLAC</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_11.png')">
-          <img src="img/foto_11.png" alt="Jóvenes tomando notas en el LLAC" loading="lazy" />
-          <div class="galeria-caption">📝 Jóvenes tomando notas y construyendo ideas</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_13.png')">
-          <img src="img/foto_13.png" alt="Foto grupal del equipo en el LLAC" loading="lazy" />
-          <div class="galeria-caption">🤝 El equipo que hizo posible Métele Mente</div>
-        </div>
- 
-        <div class="galeria-item reveal" onclick="openLightbox('img/foto_14.png')">
-          <img src="img/foto_14.png" alt="Equipo en el auditorio del Canal de Panamá" loading="lazy" />
-          <div class="galeria-caption">🇵🇦 Cierre del LLAC — desde aquí arrancó todo</div>
-        </div>
- 
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_05.png')">
+        <img src="img/foto_05.png" alt="Dinámica grupal" loading="lazy" />
+        <div class="galeria-caption">🏫 Dinámica grupal en el aula de La Esperanza</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_08.png')">
+        <img src="img/foto_08.png" alt="Jornada con familias" loading="lazy" />
+        <div class="galeria-caption">👨‍👩‍👧 Jornada de sensibilización con familias y docentes</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_01.png')">
+        <img src="img/foto_01.png" alt="Lista de asistencia" loading="lazy" />
+        <div class="galeria-caption">✍️ Lista de asistencia — ¡todos presentes!</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_09.png')">
+        <img src="img/foto_09.png" alt="Actividad de diálogo" loading="lazy" />
+        <div class="galeria-caption">💬 Actividad de diálogo y reflexión grupal</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_10.png')">
+        <img src="img/foto_10.png" alt="Actividades lúdicas" loading="lazy" />
+        <div class="galeria-caption">🎲 Actividades lúdicas con materiales didácticos</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_06.png')">
+        <img src="img/foto_06.png" alt="Acompañamiento" loading="lazy" />
+        <div class="galeria-caption">🤝 Acompañamiento uno a uno con cada estudiante</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_02.png')">
+        <img src="img/foto_02.png" alt="Apoyo personalizado" loading="lazy" />
+        <div class="galeria-caption">📝 Apoyo personalizado durante las actividades</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_03.png')">
+        <img src="img/foto_03.png" alt="Lectura compartida" loading="lazy" />
+        <div class="galeria-caption">📚 Lectura compartida con los más pequeños</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_04.png')">
+        <img src="img/foto_04.png" alt="Equipo en acción" loading="lazy" />
+        <div class="galeria-caption">⭐ El equipo en acción junto a los estudiantes</div>
+      </div>
+      <!-- duplicado para loop infinito -->
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_07.png')">
+        <img src="img/foto_07.png" alt="Foto grupal de cierre" loading="lazy" />
+        <div class="galeria-caption">🎉 Foto de cierre — entrega de materiales al grupo piloto</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_05.png')">
+        <img src="img/foto_05.png" alt="Dinámica grupal" loading="lazy" />
+        <div class="galeria-caption">🏫 Dinámica grupal en el aula de La Esperanza</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_08.png')">
+        <img src="img/foto_08.png" alt="Jornada con familias" loading="lazy" />
+        <div class="galeria-caption">👨‍👩‍👧 Jornada de sensibilización con familias y docentes</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_01.png')">
+        <img src="img/foto_01.png" alt="Lista de asistencia" loading="lazy" />
+        <div class="galeria-caption">✍️ Lista de asistencia — ¡todos presentes!</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_09.png')">
+        <img src="img/foto_09.png" alt="Actividad de diálogo" loading="lazy" />
+        <div class="galeria-caption">💬 Actividad de diálogo y reflexión grupal</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_10.png')">
+        <img src="img/foto_10.png" alt="Actividades lúdicas" loading="lazy" />
+        <div class="galeria-caption">🎲 Actividades lúdicas con materiales didácticos</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_06.png')">
+        <img src="img/foto_06.png" alt="Acompañamiento" loading="lazy" />
+        <div class="galeria-caption">🤝 Acompañamiento uno a uno con cada estudiante</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_02.png')">
+        <img src="img/foto_02.png" alt="Apoyo personalizado" loading="lazy" />
+        <div class="galeria-caption">📝 Apoyo personalizado durante las actividades</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_03.png')">
+        <img src="img/foto_03.png" alt="Lectura compartida" loading="lazy" />
+        <div class="galeria-caption">📚 Lectura compartida con los más pequeños</div>
+      </div>
+      <div class="foto-carrusel-card" onclick="openLightbox('img/foto_04.png')">
+        <img src="img/foto_04.png" alt="Equipo en acción" loading="lazy" />
+        <div class="galeria-caption">⭐ El equipo en acción junto a los estudiantes</div>
       </div>
     </div>
   </div>
@@ -966,75 +1120,123 @@
     <div class="reveal">
       <p class="section-label">Nos apoyan</p>
       <p class="section-body" style="color:#555;">Gracias a quienes creen que Panamá también se educa con empatía.</p>
- 
-      <!-- ORGANIZACIONES -->
-      <p class="aliados-subtitle">🏛️ Organizaciones aliadas</p>
-      <div class="patrocinadores-grid">
- 
-        <a href="https://www.instagram.com/guardianes_por_la.naturaleza" target="_blank" class="sponsor-card">
-          <img src="Photoroom-20250403_221429.png" alt="Guardianes por la Naturaleza" />
-          <span>Guardianes por la Naturaleza</span>
-        </a>
- 
-        <a href="https://www.fundacionelarca.org.pa" target="_blank" class="sponsor-card">
-          <img src="https://www.fundacionelarca.org.pa/es/wp-content/uploads/2016/04/logo_fundacion.png" alt="Fundación El Arca" />
-          <span>Fundación El Arca</span>
-        </a>
- 
-        <a href="https://unachi.ac.pa/" target="_blank" class="sponsor-card">
-          <img src="https://unachi.ac.pa/assets/img/logo_nav_color_unachi.jpg" alt="Consultorio Jurídico UNACHI" />
-          <span>Consultorio Jurídico UNACHI</span>
-        </a>
- 
-        <a href="https://www.youtube.com/c/RadioClaretDigital" target="_blank" class="sponsor-card">
-          <img src="https://cdn.instant.audio/images/logos/radios-com-pa/claret.png" alt="Radio Claret Panamá" />
-          <span>Radio Claret Panamá</span>
-        </a>
- 
-        <a href="https://somosimpactopositivo.com/" target="_blank" class="sponsor-card">
-          <img src="https://somosimpactopositivo.com/wp-content/uploads/2024/07/Logo-Impacto-Positivo-Negro-Amarillo.svg" alt="Impacto Positivo" />
-          <span>Impacto Positivo</span>
-        </a>
- 
- 
-      </div>
- 
-      <!-- PERSONAS ALIADAS -->
-      <p class="aliados-subtitle">🌟 Personas aliadas</p>
-      <div class="patrocinadores-grid">
- 
-        <a href="https://www.instagram.com/psic.stevencortina/" target="_blank" class="ally-card">
-          <img class="ally-avatar" src="https://media.telemetro.com/adjuntos/311/videos/018/865/0018865529.jpg" alt="Lic. Steven Cortina" />
-          <div class="ally-name">Lic. Steven Cortina</div>
-          <div class="ally-role">Psicólogo</div>
-          <div class="ally-ig-tag">@psic.stevencortina</div>
-        </a>
- 
-        <div class="ally-card" style="cursor:default;">
-          <div class="ally-initials" style="background: linear-gradient(135deg, var(--naranja), var(--rojo));">HS</div>
-          <div class="ally-name">Hilda María Santino</div>
-          <div class="ally-role">Coach de Debate</div>
-        </div>
- 
-        <div class="ally-card" style="cursor:default;">
-          <div class="ally-initials" style="background: linear-gradient(135deg, var(--morado), var(--morado-oscuro));">🤝</div>
-          <div class="ally-name">Donantes Civiles</div>
-          <div class="ally-role">Personas que creen en el proyecto</div>
-        </div>
- 
-        <a href="https://directoriotierrasaltas.com/listing/licda-ania-chavez/" target="_blank" class="ally-card">
-          <div class="ally-initials" style="background: linear-gradient(135deg, var(--verde), var(--cian));">AC</div>
-          <div class="ally-name">Mgtr. Ania Chávez</div>
-          <div class="ally-role">Especialista en Educación · Dificultades de Aprendizaje · Psicología Educativa · Trastorno de Conducta</div>
-        </a>
- 
-      </div>
- 
-      <p class="patrocinadores-cta">
-        ¿Quieres apoyar este proyecto? Escríbenos a
-        <a href="mailto:proyecto.metelemente@gmail.com">proyecto.metelemente@gmail.com</a>
-      </p>
     </div>
+  </div>
+ 
+  <!-- CARRUSEL INFINITO -->
+  <div class="carrusel-wrap reveal">
+    <div class="carrusel-track" id="carrusel-track">
+ 
+      <!-- Guardianes -->
+      <a href="https://www.instagram.com/guardianes_por_la.naturaleza" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="Photoroom-20250403_221429.png" alt="Guardianes por la Naturaleza" /></div>
+        <div class="carrusel-name">Guardianes por la Naturaleza</div>
+      </a>
+ 
+      <!-- Fundación El Arca -->
+      <a href="https://www.fundacionelarca.org.pa" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="https://www.fundacionelarca.org.pa/es/wp-content/uploads/2016/04/logo_fundacion.png" alt="Fundación El Arca" /></div>
+        <div class="carrusel-name">Fundación El Arca</div>
+      </a>
+ 
+      <!-- UNACHI -->
+      <a href="https://unachi.ac.pa/" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="https://unachi.ac.pa/assets/img/logo_nav_color_unachi.jpg" alt="Consultorio Jurídico UNACHI" /></div>
+        <div class="carrusel-name">Consultorio Jurídico UNACHI</div>
+      </a>
+ 
+      <!-- Radio Claret -->
+      <a href="https://www.youtube.com/c/RadioClaretDigital" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="https://cdn.instant.audio/images/logos/radios-com-pa/claret.png" alt="Radio Claret Panamá" /></div>
+        <div class="carrusel-name">Radio Claret Panamá</div>
+      </a>
+ 
+      <!-- Impacto Positivo -->
+      <a href="https://somosimpactopositivo.com/" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="https://somosimpactopositivo.com/wp-content/uploads/2024/07/Logo-Impacto-Positivo-Negro-Amarillo.svg" alt="Impacto Positivo" /></div>
+        <div class="carrusel-name">Impacto Positivo</div>
+      </a>
+ 
+      <!-- Steven Cortina -->
+      <a href="https://www.instagram.com/psic.stevencortina/" target="_blank" class="carrusel-card">
+        <div class="carrusel-media carrusel-avatar">
+          <img src="https://media.telemetro.com/adjuntos/311/videos/018/865/0018865529.jpg" alt="Lic. Steven Cortina" style="object-position: center 18%;" />
+        </div>
+        <div class="carrusel-name">Lic. Steven Cortina</div>
+        <div class="carrusel-role">Psicólogo · @psic.stevencortina</div>
+      </a>
+ 
+      <!-- Hilda Santino -->
+      <div class="carrusel-card" style="cursor:default;">
+        <div class="carrusel-media carrusel-avatar carrusel-initials" style="background:linear-gradient(135deg,var(--naranja),var(--rojo));">HS</div>
+        <div class="carrusel-name">Hilda María Santino</div>
+        <div class="carrusel-role">Coach de Debate</div>
+      </div>
+ 
+      <!-- Ania Chávez -->
+      <a href="https://directoriotierrasaltas.com/listing/licda-ania-chavez/" target="_blank" class="carrusel-card">
+        <div class="carrusel-media carrusel-avatar carrusel-initials" style="background:linear-gradient(135deg,var(--verde),var(--cian));">AC</div>
+        <div class="carrusel-name">Mgtr. Ania Chávez</div>
+        <div class="carrusel-role">Especialista en Educación · Dificultades de Aprendizaje</div>
+      </a>
+ 
+      <!-- Donantes Civiles -->
+      <div class="carrusel-card" style="cursor:default;">
+        <div class="carrusel-media carrusel-avatar carrusel-initials" style="background:linear-gradient(135deg,var(--morado),var(--morado-oscuro));">🤝</div>
+        <div class="carrusel-name">Donantes Civiles</div>
+        <div class="carrusel-role">Personas que creen en el proyecto</div>
+      </div>
+ 
+      <!-- DUPLICADO para loop infinito -->
+      <a href="https://www.instagram.com/guardianes_por_la.naturaleza" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="Photoroom-20250403_221429.png" alt="Guardianes por la Naturaleza" /></div>
+        <div class="carrusel-name">Guardianes por la Naturaleza</div>
+      </a>
+      <a href="https://www.fundacionelarca.org.pa" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="https://www.fundacionelarca.org.pa/es/wp-content/uploads/2016/04/logo_fundacion.png" alt="Fundación El Arca" /></div>
+        <div class="carrusel-name">Fundación El Arca</div>
+      </a>
+      <a href="https://unachi.ac.pa/" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="https://unachi.ac.pa/assets/img/logo_nav_color_unachi.jpg" alt="Consultorio Jurídico UNACHI" /></div>
+        <div class="carrusel-name">Consultorio Jurídico UNACHI</div>
+      </a>
+      <a href="https://www.youtube.com/c/RadioClaretDigital" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="https://cdn.instant.audio/images/logos/radios-com-pa/claret.png" alt="Radio Claret Panamá" /></div>
+        <div class="carrusel-name">Radio Claret Panamá</div>
+      </a>
+      <a href="https://somosimpactopositivo.com/" target="_blank" class="carrusel-card">
+        <div class="carrusel-media"><img src="https://somosimpactopositivo.com/wp-content/uploads/2024/07/Logo-Impacto-Positivo-Negro-Amarillo.svg" alt="Impacto Positivo" /></div>
+        <div class="carrusel-name">Impacto Positivo</div>
+      </a>
+      <a href="https://www.instagram.com/psic.stevencortina/" target="_blank" class="carrusel-card">
+        <div class="carrusel-media carrusel-avatar"><img src="https://media.telemetro.com/adjuntos/311/videos/018/865/0018865529.jpg" alt="Lic. Steven Cortina" style="object-position: center 18%;" /></div>
+        <div class="carrusel-name">Lic. Steven Cortina</div>
+        <div class="carrusel-role">Psicólogo · @psic.stevencortina</div>
+      </a>
+      <div class="carrusel-card" style="cursor:default;">
+        <div class="carrusel-media carrusel-avatar carrusel-initials" style="background:linear-gradient(135deg,var(--naranja),var(--rojo));">HS</div>
+        <div class="carrusel-name">Hilda María Santino</div>
+        <div class="carrusel-role">Coach de Debate</div>
+      </div>
+      <a href="https://directoriotierrasaltas.com/listing/licda-ania-chavez/" target="_blank" class="carrusel-card">
+        <div class="carrusel-media carrusel-avatar carrusel-initials" style="background:linear-gradient(135deg,var(--verde),var(--cian));">AC</div>
+        <div class="carrusel-name">Mgtr. Ania Chávez</div>
+        <div class="carrusel-role">Especialista en Educación · Dificultades de Aprendizaje</div>
+      </a>
+      <div class="carrusel-card" style="cursor:default;">
+        <div class="carrusel-media carrusel-avatar carrusel-initials" style="background:linear-gradient(135deg,var(--morado),var(--morado-oscuro));">🤝</div>
+        <div class="carrusel-name">Donantes Civiles</div>
+        <div class="carrusel-role">Personas que creen en el proyecto</div>
+      </div>
+ 
+    </div>
+  </div>
+ 
+  <div class="section-inner">
+    <p class="patrocinadores-cta">
+      ¿Quieres apoyar este proyecto? Escríbenos a
+      <a href="mailto:proyecto.metelemente@gmail.com">proyecto.metelemente@gmail.com</a>
+    </p>
   </div>
 </section>
  
@@ -1060,7 +1262,7 @@
  
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 <span>Métele Mente PA</span> · Desarrollado en el marco del LLAC 1.0 2026 · <span>#MételeMentePA</span></p>
+  <p>© 2026 <span>MeteleMente PA</span> · Desarrollado en el marco del LLAC 1.0 2026 · <span>#MeteleMentePA</span></p>
 </footer>
  
 <script>
