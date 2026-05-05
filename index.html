@@ -71,6 +71,32 @@
     }
     .nav-links a:hover { color: var(--cian); }
  
+    .hero-logo-img {
+      width: clamp(280px, 55vw, 560px);
+      margin-bottom: 24px;
+      position: relative;
+      filter:
+        drop-shadow(0 0 18px var(--cian))
+        drop-shadow(0 0 36px rgba(0,188,212,0.65))
+        drop-shadow(0 0 60px rgba(0,188,212,0.35));
+      animation: logo-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes logo-pulse {
+      0%, 100% {
+        filter:
+          drop-shadow(0 0 18px var(--cian))
+          drop-shadow(0 0 36px rgba(0,188,212,0.65))
+          drop-shadow(0 0 60px rgba(0,188,212,0.35));
+      }
+      50% {
+        filter:
+          drop-shadow(0 0 28px var(--cian))
+          drop-shadow(0 0 52px rgba(0,188,212,0.85))
+          drop-shadow(0 0 80px rgba(0,188,212,0.5));
+      }
+    }
+
     /* HERO */
     #inicio {
       min-height: 100vh;
@@ -802,7 +828,7 @@
     <li><a href="#que-es">¿Qué es?</a></li>
     <li><a href="#mision">Misión</a></li>
     <li><a href="#vision">Visión</a></li>
-    <li><a href="#que-hacemos">¿Qué hicimos?</a></li>
+    <li><a href="#que-hacemos">¿Cómo impactamos?</a></li>
     <li><a href="#piloto">Piloto</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -816,7 +842,11 @@
   <div class="bubble"></div>
   <div class="bubble"></div>
   <div class="hero-badge">LLAC 1.0 2026 · + Empatía x Panamá</div>
-  <div class="hero-title">métele<br>mente</div>
+  <img
+    src="metele_mente_2.png"
+    alt="métele mente"
+    class="hero-logo-img"
+  />
   <p class="hero-tagline">Aquí no se deja a nadie atrás,<br>¡pa' lante juntos!</p>
   <p class="hero-sub">Un proyecto social y educativo panameño</p>
   <div class="hero-hashtag">#MeteleMentePA</div>
@@ -939,7 +969,7 @@
 <section id="que-hacemos">
   <div class="section-inner">
     <div class="reveal">
-      <p class="section-label">¿Qué hicimos?</p>
+      <p class="section-label">¿Cómo impactamos?</p>
       <p class="section-body" style="color:rgba(255,255,255,0.9);">Todo desde una mirada respetuosa, humana y realista.</p>
     </div>
     <div class="hacemos-grid reveal">
@@ -1151,16 +1181,10 @@
         <div class="carrusel-name">Radio Claret Panamá</div>
       </a>
  
-      <!-- Impacto Positivo -->
-      <a href="https://somosimpactopositivo.com/" target="_blank" class="carrusel-card">
-        <div class="carrusel-media"><img src="https://somosimpactopositivo.com/wp-content/uploads/2024/07/Logo-Impacto-Positivo-Negro-Amarillo.svg" alt="Impacto Positivo" /></div>
-        <div class="carrusel-name">Impacto Positivo</div>
-      </a>
- 
       <!-- Steven Cortina -->
       <a href="https://www.instagram.com/psic.stevencortina/" target="_blank" class="carrusel-card">
         <div class="carrusel-media carrusel-avatar">
-          <img src="https://media.telemetro.com/adjuntos/311/videos/018/865/0018865529.jpg" alt="Lic. Steven Cortina" style="object-position: center 18%;" />
+          <img src="img/foto_21.png" alt="Lic. Steven Cortina" />
         </div>
         <div class="carrusel-name">Lic. Steven Cortina</div>
         <div class="carrusel-role">Psicólogo · @psic.stevencortina</div>
@@ -1175,7 +1199,9 @@
  
       <!-- Ania Chávez -->
       <a href="https://directoriotierrasaltas.com/listing/licda-ania-chavez/" target="_blank" class="carrusel-card">
-        <div class="carrusel-media carrusel-avatar carrusel-initials" style="background:linear-gradient(135deg,var(--verde),var(--cian));">AC</div>
+        <div class="carrusel-media carrusel-avatar">
+          <img src="img/foto_20.png" alt="Mgtr. Ania Chávez" />
+        </div>
         <div class="carrusel-name">Mgtr. Ania Chávez</div>
         <div class="carrusel-role">Especialista en Educación · Dificultades de Aprendizaje</div>
       </a>
@@ -1204,12 +1230,8 @@
         <div class="carrusel-media"><img src="https://cdn.instant.audio/images/logos/radios-com-pa/claret.png" alt="Radio Claret Panamá" /></div>
         <div class="carrusel-name">Radio Claret Panamá</div>
       </a>
-      <a href="https://somosimpactopositivo.com/" target="_blank" class="carrusel-card">
-        <div class="carrusel-media"><img src="https://somosimpactopositivo.com/wp-content/uploads/2024/07/Logo-Impacto-Positivo-Negro-Amarillo.svg" alt="Impacto Positivo" /></div>
-        <div class="carrusel-name">Impacto Positivo</div>
-      </a>
       <a href="https://www.instagram.com/psic.stevencortina/" target="_blank" class="carrusel-card">
-        <div class="carrusel-media carrusel-avatar"><img src="https://media.telemetro.com/adjuntos/311/videos/018/865/0018865529.jpg" alt="Lic. Steven Cortina" style="object-position: center 18%;" /></div>
+        <div class="carrusel-media carrusel-avatar"><img src="img/foto_21.png" alt="Lic. Steven Cortina" /></div>
         <div class="carrusel-name">Lic. Steven Cortina</div>
         <div class="carrusel-role">Psicólogo · @psic.stevencortina</div>
       </a>
@@ -1219,7 +1241,9 @@
         <div class="carrusel-role">Coach de Debate</div>
       </div>
       <a href="https://directoriotierrasaltas.com/listing/licda-ania-chavez/" target="_blank" class="carrusel-card">
-        <div class="carrusel-media carrusel-avatar carrusel-initials" style="background:linear-gradient(135deg,var(--verde),var(--cian));">AC</div>
+        <div class="carrusel-media carrusel-avatar">
+          <img src="img/foto_20.png" alt="Mgtr. Ania Chávez" />
+        </div>
         <div class="carrusel-name">Mgtr. Ania Chávez</div>
         <div class="carrusel-role">Especialista en Educación · Dificultades de Aprendizaje</div>
       </a>
@@ -1286,3 +1310,4 @@
  
 </body>
 </html>
+
