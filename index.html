@@ -71,11 +71,47 @@
     }
     .nav-links a:hover { color: var(--cian); }
  
-    .hero-logo-img {
-      display: none; /* no usado */
+    .hero-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(3rem, 10vw, 6rem);
+      color: var(--morado-oscuro);
+      margin-bottom: 32px;
+      position: relative;
+      line-height: 1.1;
+      text-shadow: 4px 4px 0 rgba(255,255,255,0.3);
+      filter:
+        drop-shadow(0 0 20px rgba(255,255,255,0.9))
+        drop-shadow(0 0 45px rgba(75,29,142,0.7));
+      animation: logo-pulse 3s ease-in-out infinite;
     }
  
-    /* HERO */
+    @keyframes logo-pulse {
+      0%, 100% {
+        filter:
+          drop-shadow(0 0 20px rgba(255,255,255,0.9))
+          drop-shadow(0 0 45px rgba(75,29,142,0.7));
+      }
+      50% {
+        filter:
+          drop-shadow(0 0 35px rgba(255,255,255,1))
+          drop-shadow(0 0 70px rgba(75,29,142,0.95));
+      }
+    }
+ 
+    .hero-logo-img { display: none; }
+ 
+    .hero-title .l {
+      display: inline-block;
+      letter-spacing: 0.01em;
+    }
+    .hero-title .l.c1 { color: var(--morado); }
+    .hero-title .l.c2 { color: #fff; }
+    .hero-title .l.c3 { color: var(--verde); }
+    .hero-title .l.c4 { color: var(--rojo); }
+    .hero-title .l.c5 { color: var(--naranja); }
+    .hero-title .l.c6 { color: var(--rojo); }
+    .hero-title .l.c7 { color: var(--morado); }
+    .hero-title .l.c8 { color: var(--amarillo); }
     #inicio {
       min-height: 100vh;
       background: var(--cian);
@@ -852,10 +888,7 @@
   <div class="bubble"></div>
   <div class="bubble"></div>
   <div class="hero-badge">LLAC 1.0 2026 · + Empatía x Panamá</div>
-  <div class="hero-title">
-    <span class="l c1">M</span><span class="l c2">é</span><span class="l c3">t</span><span class="l c5">e</span><span class="l c8">l</span><span class="l c4">e</span><br>
-    <span class="l c4">M</span><span class="l c5">e</span><span class="l c8">n</span><span class="l c1">t</span><span class="l c3">e</span>
-  </div>
+  <div class="hero-title">Métele<br>Mente</div>
   <p class="hero-tagline">Aquí no se deja a nadie atrás,<br>¡pa' lante juntos!</p>
   <p class="hero-sub">Un proyecto social y educativo panameño</p>
   <div class="hero-hashtag">#MeteleMentePA</div>
